@@ -21,13 +21,13 @@
   
 	class Solution:
 	    def twoSum(self, nums: List[int], target: int) -> List[int]:
-	        hash_table={}
-	        for i in range(len(nums)):
-	            hash_table[nums[i]]=i
+	        hash_table={} #建立一个哈希表
+	        for i in range(len(nums)):  #循环跑起来
+	            hash_table[nums[i]]=i  #把nums数组存到哈希表中
 	            
-	        for i in range(len(nums)):
-	            if target-nums[i] in hash_table:
-	                if hash_table[target-nums[i]] != i:
+	        for i in range(len(nums)):  #循环跑起来
+	            if target-nums[i] in hash_table:  #用target-nums[i]和哈希表中的数字对应
+	                if hash_table[target-nums[i]] != i: #同一个数不能用两次
 	                    return[i, hash_table[target-nums[i]]]
 
 这样就时间复杂度就变成了O(n)，而只多了一点点存放哈希表的内存。  
